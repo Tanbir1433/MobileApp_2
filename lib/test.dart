@@ -30,55 +30,54 @@ class _TestState extends State<Test> {
                   fontSize: 17.0,
                 ),
         ),
-        trailing: GestureDetector(
-          onTap: () {
-            setState(() {
-              isChecked = !isChecked;
-            });
-          },
-          child: Container(
-            height: 25,
-            width: 25,
-            decoration: BoxDecoration(
-                border: Border.all(
-              color: Colors.black,
-              width: 2,
-            )),
-            child: isChecked
-                ? const Center(
-                    child: FaIcon(
-                      FontAwesomeIcons.check,
-                      color: Colors.lightBlueAccent,
-                      size: 18,
-                    ),
-                  )
-                : const Center(
-                    child: FaIcon(
-                      FontAwesomeIcons.galacticRepublic,
-                      color: Colors.white,
-                      size: 1,
-                    ),
-                  ),
-          ),
-        )
+      trailing:Checkbox(
+        value: isChecked,
+        onChanged: (bool? value) {
+          setState(() {
+            isChecked = value!;
+          });
+        },
+      ),
 
-        // Checkbox(
-        //   checkColor: Colors.lightBlueAccent,
-        //   activeColor: Colors.white,
-        //
-        //
-        //
-        //
-        //
-        //   value: isChecked,
-        //   onChanged: (bool? value) {
+
+
+        
+        //*************************************
+
+        // trailing: GestureDetector(
+        //   onTap: () {
         //     setState(() {
-        //       isChecked = value!;
+        //       isChecked = !isChecked;
         //     });
         //   },
-        // ),
-
+        //   child: Container(
+        //     height: 25,
+        //     width: 25,
+        //     decoration: BoxDecoration(
+        //         border: Border.all(
+        //       color: Colors.black,
+        //       width: 2,
+        //     )),
+        //     child: isChecked
+        //         ? const Center(
+        //             child: FaIcon(
+        //               FontAwesomeIcons.check,
+        //               color: Colors.lightBlueAccent,
+        //               size: 18,
+        //             ),
+        //           )
+        //         : const Center(
+        //             child: FaIcon(
+        //               FontAwesomeIcons.galacticRepublic,
+        //               color: Colors.white,
+        //               size: 1,
+        //             ),
+        //           ),
+        //   ),
+        // )
         //onTap: () {},
+      //******************************************
+
         );
   }
 }
